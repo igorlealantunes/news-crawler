@@ -24,6 +24,14 @@ class IGItem(scrapy.Item):
     created = scrapy.Field()
     link = scrapy.Field()
 
+class R7Item(scrapy.Item):
+    title = scrapy.Field()
+    author = scrapy.Field()
+    text = scrapy.Field()
+    summary = scrapy.Field()
+    created = scrapy.Field()
+    link = scrapy.Field()
+
 class G1JsonItem(scrapy.Item):
     title = scrapy.Field()
     author = scrapy.Field()

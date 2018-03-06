@@ -68,7 +68,8 @@ ROBOTSTXT_OBEY = False
 ITEM_PIPELINES = {
    'noticias.pipelines.NoticiasPipeline': 300,
    'noticias.pipelines.G1JsonPipeline': 300,
-   'noticias.pipelines.IGJsonPipeline': 300
+   'noticias.pipelines.IGPipeline': 300,
+   'noticias.pipelines.R7Pipeline': 300
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

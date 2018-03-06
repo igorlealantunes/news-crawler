@@ -3,6 +3,7 @@ import scrapy
 from noticias.items import G1JsonItem
 import json
 import sys
+from scrapy.http.request import Request
 
 class G1Spider(scrapy.Spider):
     name = 'g1'
@@ -24,11 +25,11 @@ class G1Spider(scrapy.Spider):
 
             yield response.follow(new['content']['url'], self.parse_article)
 
-        # creates the url for the next page 
-        next_page = str(self.pageNum + 1)
+        self.pageNum += 1
 
-        self.pageNum = self.pageNum + 1
-        yield response.follow(next_page, self.parse)
+        next_page = "https://falkor-cda.bastian.globo.com/feeds/8d7daa58-07fd-45c9-b1fe-aaa654957850/posts/page/"+ str(self.pageNum)
+
+        yield Request(next_page, self.parse)
 
     def parse_article(self, response):
 
