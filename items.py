@@ -38,4 +38,5 @@ class G1JsonItem(scrapy.Item):
     text = scrapy.Field()
     summary = scrapy.Field()
     created = scrapy.Field()
+    source = scrapy.Field()
     link = scrapy.Field()

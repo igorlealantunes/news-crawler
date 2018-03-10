@@ -7,7 +7,16 @@ from scrapy.http.request import Request
 
 class G1Spider(scrapy.Spider):
     name = 'g1'
-    #allowed_domains = ['https://falkor-cda.bastian.globo.com/feeds/8d7daa58-07fd-45c9-b1fe-aaa654957850/posts/page']
+
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            #'noticias.pipelines.G1JsonPipeline': 300,
+            'noticias.pipelines.NewsObjectDBPipeline' : 300
+        }
+    }
+
+    # URL generic (nao so politica) > https://falkor-cda.bastian.globo.com/feeds/b904b430-123a-4f93-8cf4-5365adf97892/posts/page/1
+    
     start_urls = ['https://falkor-cda.bastian.globo.com/feeds/8d7daa58-07fd-45c9-b1fe-aaa654957850/posts/page/1']
 
     pageNum = 1
@@ -41,7 +50,7 @@ class G1Spider(scrapy.Spider):
         created = response.css('p.content-publication-data__updated time ::text').extract_first()
         
         notice = G1JsonItem(title=title, author=author, text=text,
-                              link=link, summary='', created=created)
+                              link=link, summary='', source="g1", created=created)
         yield notice
 
 

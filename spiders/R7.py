@@ -10,6 +10,18 @@ class R7Spider(scrapy.Spider):
     
     name = 'r7'
     
+    custom_settings = {
+        'ITEM_PIPELINES': {
+            'noticias.pipelines.R7Pipeline': 300
+        }
+    }
+
+    """
+        Economia: https://noticias.r7.com/economia/noticias?mobile_cookie=false&page=1
+        Brasil : https://noticias.r7.com/brasil/noticias?mobile_cookie=false&page=1
+    """
+
+
     start_urls = ['https://noticias.r7.com/brasil/noticias?mobile_cookie=false&page=1']
 
     pageNum = 1

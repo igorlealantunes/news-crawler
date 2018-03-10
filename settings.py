@@ -66,10 +66,6 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'noticias.pipelines.NoticiasPipeline': 300,
-   'noticias.pipelines.G1JsonPipeline': 300,
-   'noticias.pipelines.IGPipeline': 300,
-   'noticias.pipelines.R7Pipeline': 300
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

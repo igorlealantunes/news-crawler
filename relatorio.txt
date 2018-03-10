@@ -1,0 +1,17 @@
+UOL: so consigo chegar ate 05/02/2018, o que fazer ?
+ESTADAO: tem protecao contra scrappers > pop up bloqueando 
+
+
+Desde 2010+ ate Hoje -- 
+
+
+-> Tentar pegar o numero de compartilhamento
+-> Talvez guardar o ID da noticia 
+
+-> Pegar mais portais
+-> Montar banco de dados
+
+-> Focar alem da categoria de politica ( ver economia, ... )
+
+
+-> Mandar email pra Saulo. (pegar principais sites, Portais, Perfil de Facebook, instagram, twiteer)
